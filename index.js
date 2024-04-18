@@ -5,6 +5,7 @@ for (let i = 0; i < btn; i++){
      document.querySelectorAll(".drum")[i].addEventListener("click", function(){
        let buttonInnerHTML = this.innerHTML;
         makesound(buttonInnerHTML)
+        makeAnimation(buttonInnerHTML)
      });
 
 
@@ -12,6 +13,7 @@ for (let i = 0; i < btn; i++){
  document.addEventListener("keypress", function (event){
 
     makesound(event.key)
+    makeAnimation(event.key)
 })
 
 function makesound(key){
@@ -47,6 +49,15 @@ function makesound(key){
         default:
        }
 
+}
+
+function makeAnimation(currentkey){
+    let activeButton = document.querySelector("." + currentkey)
+    activeButton.classList.add("pressed")
+
+    setTimeout(function(){
+        activeButton.classList.remove("pressed")
+    }, 100)
 }
 
     
