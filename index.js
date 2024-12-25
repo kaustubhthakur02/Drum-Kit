@@ -12,6 +12,10 @@ for (let i = 0; i < btn; i++){
     }
  document.addEventListener("keypress", function (event){
 
+
+
+    
+
     makesound(event.key)
     makeAnimation(event.key)
 })
